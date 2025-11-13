@@ -1,85 +1,138 @@
-# Welcome to your Lovable project
+# RV2 - Recorridos Virtuales 360°
 
-## Project info
+Proyecto web independiente con chatbot IA (RAI) y sistema de contacto por correo.
 
-**URL**: https://lovable.dev/projects/af64ef14-baca-4410-aa4c-1c33851d5860
+## 🚀 Configuración Rápida
 
-## How can I edit this code?
+### 1. Obtén tus API Keys
+
+**GEMINI_API_KEY** (para el chatbot RAI):
+- Ve a: https://ai.google.dev/gemini-api/docs/api-key
+- Crea tu cuenta y genera una API Key gratuita
+
+**RESEND_API_KEY** (para envío de correos):
+- Ve a: https://resend.com/api-keys
+- Crea tu cuenta (plan gratuito disponible)
+- Valida tu dominio en: https://resend.com/domains
+- Genera tu API Key
+
+### 2. Configura el archivo .env
+
+Crea un archivo `.env` en la raíz del proyecto copiando `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Abre `.env` y coloca tus API Keys:
+
+```env
+# 🔑 COLOCA TUS API KEYS AQUÍ:
+GEMINI_API_KEY="tu_api_key_de_gemini_aqui"
+RESEND_API_KEY="tu_api_key_de_resend_aqui"
+
+# 📧 DESTINATARIOS DE CORREOS (ya configurados):
+RESEND_RECIPIENTS="juanchacon@rv2ven.com,juanchacon0298@gmail.com"
+
+# ✅ Resto de configuración (no modificar):
+RESEND_FORM_FROM="RV2 Web <onboarding@resend.dev>"
+RESEND_CHAT_FROM="RV2 Chat <onboarding@resend.dev>"
+PORT=8787
+VITE_MAIL_API_URL="http://localhost:8787/api/send-mail"
+VITE_CHAT_API_URL="http://localhost:8787/api/chat"
+```
+
+### 3. Instala e Inicia
+
+```bash
+# Instalar dependencias
+npm i
+
+# Iniciar frontend (puerto 5173)
+npm run dev
+
+# En otra terminal, iniciar servidor backend (puerto 8787)
+npm run server
+```
+
+## ✨ Funcionalidades
+
+- **RAI (Chatbot IA)**: Sales closer inteligente usando Gemini
+- **Formulario de Contacto**: Envía correos a los emails configurados
+- **Transcripciones**: Las conversaciones con RAI se envían por correo automáticamente
+
+## 📧 Correos Electrónicos
+
+Los correos se envían automáticamente a:
+- juanchacon@rv2ven.com
+- juanchacon0298@gmail.com
+
+**Qué correos recibirás:**
+1. Formularios de contacto completados por usuarios
+2. Transcripciones de conversaciones con RAI cuando el usuario proporciona su email
+
+## 🔧 Editar el Código
 
 There are several ways of editing your application.
 
-**Use Lovable**
+### Opción 1: Clonar repositorio y trabajar localmente
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/af64ef14-baca-4410-aa4c-1c33851d5860) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+```bash
+git clone <TU_URL_DE_GIT>
+cd <NOMBRE_DEL_PROYECTO>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-
-# Step 5: (Opcional) Levanta el servicio local que maneja correos y chat IA.
-# Este servicio expone POST http://localhost:8787/api/send-mail y POST
-# http://localhost:8787/api/chat, cargando sus variables desde `.env`/`.env.mail`.
-# Consulta `server/README.md` para ver instrucciones de despliegue y
-# configuración avanzada.
-npm run server
-
-> Nota: el frontend consume las URL indicadas en `VITE_MAIL_API_URL` y
-> `VITE_CHAT_API_URL`. Por defecto apuntan a `http://localhost:8787/api/send-mail`
-> y `http://localhost:8787/api/chat`, así que ajusta estos valores si cambias el
-> puerto o el host del servicio y reconstruye con `npm run build`.
+# Configura tu .env con las API Keys
+npm run dev     # Terminal 1
+npm run server  # Terminal 2
 ```
 
-**Edit a file directly in GitHub**
+### Opción 2: Editar directamente en GitHub
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Ve al archivo que quieres modificar
+- Click en "Edit" (ícono de lápiz)
+- Haz tus cambios y commit
 
-**Use GitHub Codespaces**
+### Opción 3: GitHub Codespaces
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Click en "Code" → "Codespaces" → "New codespace"
+- Edita y haz commit directamente desde el navegador
 
-## What technologies are used for this project?
+## 🛠️ Stack Tecnológico
 
-This project is built with:
+- **Frontend**: React + TypeScript + Vite
+- **UI**: shadcn-ui + Tailwind CSS
+- **IA**: Google Gemini (chatbot RAI)
+- **Correos**: Resend API
+- **Backend**: Node.js (servidor local en `server/index.js`)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📦 Deploy en Producción
 
-## How can I deploy this project?
+Para desplegar el proyecto en tu servidor:
 
-Simply open [Lovable](https://lovable.dev/projects/af64ef14-baca-4410-aa4c-1c33851d5860) and click on Share -> Publish.
+1. Clona el repositorio en tu servidor
+2. Configura el archivo `.env` con tus API Keys
+3. Instala PM2 o similar para mantener el servidor corriendo:
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+npm install -g pm2
+pm2 start server/index.js --name rv2-server
+pm2 startup  # Para que inicie automáticamente
+pm2 save
+```
 
-Yes, you can!
+4. Configura nginx o apache como reverse proxy
+5. Compila el frontend: `npm run build`
+6. Sirve la carpeta `dist/` con tu servidor web
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📝 Notas Importantes
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **API Keys**: NUNCA subas tu `.env` al repositorio
+- **Correos**: Asegúrate de validar tu dominio en Resend
+- **RAI**: Es un sales closer agresivo, optimizado para cerrar ventas
+- **Transcripciones**: Solo se envían cuando el usuario proporciona su email
+
+## 📞 Soporte
+
+Para más información consulta `server/README.md` o contacta a:
+- juanchacon@rv2ven.com
+- juanchacon0298@gmail.com

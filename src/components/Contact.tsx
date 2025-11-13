@@ -24,7 +24,7 @@ const Contact = () => {
     }
 
     if (formData.telefono.length > 13) {
-      toast.error("El número telefónico debe tener 10 dígitos");
+      toast.error("El número telefónico no puede tener más de 13 dígitos");
       return;
     }
 
