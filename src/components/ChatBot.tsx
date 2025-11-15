@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   role: "user" | "assistant";
@@ -262,7 +263,9 @@ const ChatBot = ({ isOpen, onClose }: ChatBotProps) => {
                         : "bg-secondary text-secondary-foreground"
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    <div className="text-sm prose prose-sm max-w-none dark:prose-invert prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5">
+                      <ReactMarkdown>{message.content}</ReactMarkdown>
+                    </div>
                   </div>
                 </div>
               ))}
