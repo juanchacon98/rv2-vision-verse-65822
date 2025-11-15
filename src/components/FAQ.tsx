@@ -8,7 +8,7 @@ import configData from "@/data/config.json";
 
 const FAQ = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="preguntas" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">

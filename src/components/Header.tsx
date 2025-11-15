@@ -65,7 +65,7 @@ const Header = () => {
               Proyectos
             </button>
             <button
-              onClick={() => scrollToSection("acerca")}
+              onClick={() => scrollToSection("preguntas")}
               className={`hover:text-primary transition-colors font-medium ${
                 isScrolled ? "text-foreground" : "text-white"
               }`}
@@ -115,7 +115,7 @@ const Header = () => {
               Proyectos
             </button>
             <button
-              onClick={() => scrollToSection("acerca")}
+              onClick={() => scrollToSection("preguntas")}
               className="text-foreground hover:text-primary transition-colors font-medium text-left py-2"
             >
               Acerca de
