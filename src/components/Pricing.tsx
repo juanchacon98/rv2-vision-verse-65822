@@ -44,14 +44,18 @@ const Pricing = () => {
                   <span className="font-semibold">Plan Digitaliza</span>
                 </div>
                 
-                <div className="flex items-baseline justify-center gap-2 mb-2">
-                  <span className="text-5xl md:text-6xl font-bold text-primary">$0.5</span>
+                <div className="flex items-baseline justify-center gap-3 mb-2">
+                  <span className="text-3xl md:text-4xl font-bold text-muted-foreground line-through">$1</span>
+                  <span className="text-5xl md:text-6xl font-bold text-primary">$0.6</span>
                   <span className="text-2xl text-muted-foreground">por m²</span>
+                </div>
+                <div className="inline-block bg-orange-500/10 text-orange-600 dark:text-orange-400 px-4 py-2 rounded-lg font-semibold mb-2">
+                  ¡OFERTA! 40% de descuento
                 </div>
                 <p className="text-sm text-muted-foreground mb-1">(Pago único)</p>
                 
                 <div className="text-xl text-foreground font-semibold mt-4">
-                  + $10<span className="text-base text-muted-foreground">/mes</span> por hosting y mantenimiento
+                  + $15<span className="text-base text-muted-foreground">/mes</span> por hosting y mantenimiento
                 </div>
                 
                 <div className="inline-block mt-4 bg-green-500/10 text-green-600 dark:text-green-400 px-4 py-2 rounded-lg font-semibold">
